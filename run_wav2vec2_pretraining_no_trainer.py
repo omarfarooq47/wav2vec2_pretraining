@@ -287,8 +287,8 @@ class DataCollatorForWav2Vec2Pretraining:
             7.5 (Volta).
     """
 
-    model: Wav2Vec2ForPreTraining = Wav2Vec2ForPreTraining()
-    feature_extractor: Wav2Vec2FeatureExtractor = Wav2Vec2FeatureExtractor()
+    model: Wav2Vec2ForPreTraining = Wav2Vec2ForPreTraining(args.model_path)
+    feature_extractor: Wav2Vec2FeatureExtractor = Wav2Vec2FeatureExtractor.from_pretrained(args.model_path)
     padding: Union[bool, str] = "longest"
     pad_to_multiple_of: Optional[int] = None
 
